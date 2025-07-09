@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💖 Cố lên người yêu 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fbc2eb, #a6c1ee);
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 50px 20px;
+      max-width: 500px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 25px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 2s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ff69b4;
+      animation: pulse 2s infinite;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #555;
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #ff85c1;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes pulse {
+      0%, 100% {transform: scale(1);}
+      50% {transform: scale(1.05);}
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center;
+      background-size: contain;
+      animation: float 4s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0% {transform: translateY(0) scale(1);}
+      100% {transform: translateY(-100vh) scale(1.5); opacity: 0;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💗 Cố lên nhé tình yêu 💗</h1>
+    <p>cố lên người anh yêu anh luôn chờ em 😘</p>
+    <img src="485593860_1220708659768649_2805178149545691469_n.jpg" width="400">
+    <button onclick="showMessage()">Bấm vào đây nè 💌</button>
+    <p id="message" style="margin-top: 20px; font-weight: bold; color: #d6336c;"></p>
+  </div>
+
+  <!-- Tim bay -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 300);
+
+    function showMessage() {
+      const msg = document.getElementById("message");
+      msg.innerText = "Yêu người học giỏi nhất thế giới này nhiều lắm 😘❤️";
+    }
+  </script>
+</body>
+</html>
